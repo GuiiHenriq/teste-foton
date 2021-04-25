@@ -78,35 +78,35 @@ export default {
 .header {
   position: initial;
 
-  &-item {
-    flex-direction: row;
-
-    a {
+    &-item {
       flex-direction: row;
-    }
 
-    &_icon {
-      width: 1rem;
-    }
+      a {
+        flex-direction: row;
+      }
 
-    svg {
-      color: $color-silver;
-    }
+      &_icon {
+        width: 1rem;
+      }
 
-    &_title {
-      color: $color-silver;
-      font-size: 1.125rem;
-      margin: 0 0 0 0.625rem;
-    }
+      svg {
+        color: $color-silver;
+      }
 
-    &_active,
-    &:hover {
-      svg,
-      .header-item_title {
-        color: $color-gray;
+      &_title {
+        color: $color-silver;
+        font-size: 1.125rem;
+        margin: 0 0 0 0.625rem;
+      }
+
+      &_active,
+      &:hover {
+        svg,
+        .header-item_title {
+          color: $color-gray;
+        }
       }
     }
   }
-}
 }
 </style>

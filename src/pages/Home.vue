@@ -3,7 +3,7 @@
     <Header v-if="isDesktop" />
 
     <div class="home">
-      
+    
       <Search />
 
       <h1 class="home-title">
@@ -44,7 +44,10 @@
                   </section>
 
                   <aside>
-                    <img src="../assets/icon-livro.png" alt="Book Illustration">
+                    <div class="asset-path"><img src="../assets/asset-path.svg" alt=""></div>
+                    <div class="asset-rectangle"><img src="../assets/asset-rectangle.svg" alt=""></div>
+                    <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
+                    <img class="home-discover_box--item_thumb" src="../assets/icon-livro.png" alt="Book Illustration">
                   </aside>
                 </router-link>
               </div>
@@ -68,7 +71,10 @@
                   </section>
 
                   <aside>
-                    <img src="../assets/icon-livro.png" alt="Book Illustration">
+                    <div class="asset-path"><img src="../assets/asset-path.svg" alt=""></div>
+                    <div class="asset-rectangle"><img src="../assets/asset-rectangle.svg" alt=""></div>
+                    <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
+                    <img class="home-discover_box--item_thumb" src="../assets/icon-livro2.png" alt="Book Illustration">
                   </aside>
                 </router-link>
               </div>
@@ -91,11 +97,14 @@
             <router-link :to="{ name: 'Book', params: { id: 'eLRhDgAAQBAJ' } }" title="Go to Book Page">
               <div class="bg"></div>
               <aside>
-                <img src="../assets/icon-livro2.png" alt="Book Illustration">
+                <img src="../assets/icon-livro3.png" alt="Book Illustration">
               </aside>
 
               <section>
                 <div class="home-current_box--item_head">
+                  <div class="asset-rectangle"><img src="../assets/asset-rectangle.svg" alt=""></div>
+                  <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
+
                   <h2 class="home-current_box--item_title">
                     Originals
                   </h2>
@@ -149,7 +158,10 @@
                   </section>
 
                   <aside>
-                    <img src="../assets/icon-livro.png" alt="Book Illustration">
+                    <div class="asset-path"><img src="../assets/asset-path.svg" alt=""></div>
+                    <div class="asset-rectangle"><img src="../assets/asset-rectangle.svg" alt=""></div>
+                    <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
+                    <img class="home-discover_box--item_thumb" src="../assets/icon-livro.png" alt="Book Illustration">
                   </aside>
                 </router-link>
               </div>
@@ -173,7 +185,10 @@
                   </section>
 
                   <aside>
-                    <img src="../assets/icon-livro.png" alt="Book Illustration">
+                    <div class="asset-path"><img src="../assets/asset-path.svg" alt=""></div>
+                    <div class="asset-rectangle"><img src="../assets/asset-rectangle.svg" alt=""></div>
+                    <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
+                    <img class="home-discover_box--item_thumb" src="../assets/icon-livro3.png" alt="Book Illustration">
                   </aside>
                 </router-link>
               </div>
@@ -196,11 +211,14 @@
             <router-link :to="{ name: 'Book', params: { id: 'eLRhDgAAQBAJ' } }" title="Go to Book Page">
               <div class="bg"></div>
               <aside>
-                <img src="../assets/icon-livro2.png" alt="Book Illustration">
+                <img src="../assets/icon-livro3.png" alt="Book Illustration">
               </aside>
 
               <section>
                 <div class="home-current_box--item_head">
+                  <div class="asset-rectangle"><img src="../assets/asset-rectangle.svg" alt=""></div>
+                  <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
+
                   <h2 class="home-current_box--item_title">
                     Originals
                   </h2>
@@ -246,6 +264,8 @@
 import Header from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 import Footer from '@/components/Footer.vue'
+
+// Import Slick
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
@@ -260,7 +280,7 @@ export default {
   },
   computed: {
     isDesktop() {
-      if (screen.width >= 768) return true
+      if (screen.width >= 769) return true
       else return false
     },
   },
@@ -276,14 +296,6 @@ export default {
         "slidesToShow": 1,
         "slidesToScroll": 1
       },
-      /*settingsMobile: {
-        "centerMode": true,
-        "centerPadding": "20px",
-        "focusOnSelect": true,
-        "infinite": true,
-        "slidesToShow": 3,
-        "speed": 500
-      },*/
       settingsDesktop: {
         "dots": true,
         "dotsClass": "slick-dots custom-dot-class",
@@ -317,7 +329,8 @@ export default {
 /* ============= Imports ============= */
 @import '@/style/variables.scss';
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
   color: $color-pink !important;
 }
 
@@ -339,7 +352,7 @@ export default {
   }
 
   &-discover {
-    margin-bottom: 1.875rem;
+    margin-bottom: 2.813rem;
     position: relative;
 
     .asset {
@@ -348,6 +361,34 @@ export default {
       height: 69px;
       position: absolute;
       right: 0;
+      top: 20px;
+    }
+
+    aside {
+      position: relative;
+
+      & > div {
+        position: absolute;
+      }
+
+      .asset-path {
+        left: -0.75rem;
+        top: -0.625rem;
+      }
+
+      .asset-rectangle {
+        left: -2.313rem;
+        bottom: 1.563rem;
+      }
+
+      .asset-oval {
+        left: -2.313rem;
+        top: 0;
+      }
+
+      .home-discover_box--item_thumb {
+        width: 72px;
+      }
     }
     
     &_box {
@@ -430,6 +471,7 @@ export default {
     &_box {
       display: flex;
       align-items: center;
+      position: relative;
 
       a {
         text-decoration: none;
@@ -440,6 +482,22 @@ export default {
       }
 
       &--item {
+        &_head {
+          & > div {
+            position: absolute;
+          }
+
+          .asset-rectangle {
+            right: 0;
+            bottom: 1.375rem;
+          }
+
+          .asset-oval {
+            right: 20%;
+            top: 0.75rem;
+          }
+        }
+
         &_title {
           font-family: $font-secondary;
           font-size: 1.688rem;
@@ -507,6 +565,7 @@ export default {
     font-size: 1.125rem;
     letter-spacing: 0.5px;
     line-height: 21.09px;
+    font-weight: 500;
   }
 
   .cta-box {
@@ -518,12 +577,19 @@ export default {
   }
 }
 
+
 /* ============= Responsive ============= */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .home {
+    padding: 0 3.125rem !important;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .home {
     max-height: initial;
     padding: 0;
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     overflow: auto;
 
@@ -531,6 +597,15 @@ export default {
       font-size: 1.75rem;
       margin: 3.125rem 0 rem 0;
       text-align: center;
+    }
+
+    .title-box {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .cta-box {
+      font-size: 1rem;
     }
 
     .wrapper-desktop {
@@ -541,6 +616,10 @@ export default {
 
     &-discover {
       width: 45%;
+
+      &_box {
+        margin-left: 1.563rem;
+      }
     }
     
     &-current {

@@ -52,6 +52,7 @@ export default {
   }
 }
 
+
 /* ============= Responsive ============= */
 @media screen and (min-width: 769px) {
   .wrapper-search {

@@ -77,7 +77,8 @@ export default {
     }
   },
   created() {
-    this.getBook();
+    if(this.id) return this.getBook(this.id);
+    else return this.$router.push('/');
   },
 }
 </script>
@@ -223,7 +224,7 @@ main {
       .wrapper {
         max-height: initial;
         padding: 0;
-        width: 1200px;
+        max-width: 1200px;
         margin: 0 auto;
         overflow: auto;
       }

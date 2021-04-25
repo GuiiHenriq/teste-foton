@@ -54,7 +54,7 @@ export default {
   props: ["id"],
   computed: {
     isDesktop() {
-      if (screen.width >= 768) return true
+      if (screen.width >= 769) return true
       else return false
     },
   },
@@ -98,7 +98,6 @@ export default {
     margin: 2.5rem 0;
 
     &_book {
-      //width: 33.33%;
       width: 6.25rem;
 
       &:nth-child(n+4){
@@ -147,7 +146,7 @@ export default {
   .books {
     max-height: initial;
     padding: 0;
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     overflow: auto;
 
