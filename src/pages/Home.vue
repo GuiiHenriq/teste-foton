@@ -30,16 +30,16 @@
                   <div class="asset"></div>
                   <section>
                     <h2 class="home-discover_box--item_title">
-                      Hooked
+                      {{books.firstBook.name}}
                     </h2>
 
                     <p class="home-discover_box--item_sub">
-                      Nir Eyal
+                      {{books.firstBook.author}}
                     </p>
 
                     <div class="home-discover_box--item_desc">
                       <img src="../assets/icon-statistic.svg" alt="Statistic Icon">
-                      <p><strong>120+</strong> Read Now</p>
+                      <p><strong>{{books.firstBook.author}}+</strong> Read Now</p>
                     </div>
                   </section>
 
@@ -57,16 +57,16 @@
                   <div class="asset"></div>
                   <section>
                     <h2 class="home-discover_box--item_title">
-                      The One Thing
+                      {{books.secondBook.name}}
                     </h2>
 
                     <p class="home-discover_box--item_sub">
-                      Gary Keller
+                      {{books.secondBook.author}}
                     </p>
 
                     <div class="home-discover_box--item_desc">
                       <img src="../assets/icon-statistic.svg" alt="Statistic Icon">
-                      <p><strong>90+</strong> Read Now</p>
+                      <p><strong>{{books.secondBook.number}}+</strong> Read Now</p>
                     </div>
                   </section>
 
@@ -106,17 +106,17 @@
                   <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
 
                   <h2 class="home-current_box--item_title">
-                    Originals
+                    {{books.thirdBook.name}}
                   </h2>
 
                   <p class="home-current_box--item_sub">
-                      by Adam Grant
+                      by {{books.thirdBook.author}}
                   </p>
                 </div>
                 
                 <div class="home-current_box--item_desc">
                   <img src="../assets/icon-chapter.svg" alt="Icon Statistic">
-                  <p>Chapter <strong>2</strong> From 9</p>
+                  <p>Chapter <strong>{{books.thirdBook.chapterCurrent}}</strong> From {{books.thirdBook.chapterTotal}}</p>
                 </div>
               </section>
             </router-link>
@@ -144,16 +144,16 @@
                   <div class="asset"></div>
                   <section>
                     <h2 class="home-discover_box--item_title">
-                      Hooked
+                      {{books.firstBook.name}}
                     </h2>
 
                     <p class="home-discover_box--item_sub">
-                      Nir Eyal
+                      {{books.firstBook.author}}
                     </p>
 
                     <div class="home-discover_box--item_desc">
                       <img src="../assets/icon-statistic.svg" alt="Statistic Icon">
-                      <p><strong>120+</strong> Read Now</p>
+                      <p><strong>{{books.firstBook.number}}+</strong> Read Now</p>
                     </div>
                   </section>
 
@@ -171,16 +171,16 @@
                   <div class="asset"></div>
                   <section>
                     <h2 class="home-discover_box--item_title">
-                      The One Thing
+                      {{books.secondBook.name}}
                     </h2>
 
                     <p class="home-discover_box--item_sub">
-                      Gary Keller
+                      {{books.secondBook.author}}
                     </p>
 
                     <div class="home-discover_box--item_desc">
                       <img src="../assets/icon-statistic.svg" alt="Statistic Icon">
-                      <p><strong>90+</strong> Read Now</p>
+                      <p><strong>{{books.secondBook.number}}+</strong> Read Now</p>
                     </div>
                   </section>
 
@@ -220,17 +220,17 @@
                   <div class="asset-oval"><img src="../assets/asset-oval.svg" alt=""></div>
 
                   <h2 class="home-current_box--item_title">
-                    Originals
+                    {{books.thirdBook.name}}
                   </h2>
 
                   <p class="home-current_box--item_sub">
-                      by Adam Grant
+                      by {{books.thirdBook.author}}
                   </p>
                 </div>
                 
                 <div class="home-current_box--item_desc">
                   <img src="../assets/icon-chapter.svg" alt="Icon Statistic">
-                  <p>Chapter <strong>2</strong> From 9</p>
+                  <p>Chapter <strong>{{books.thirdBook.chapterCurrent}}</strong> From {{books.thirdBook.chapterTotal}}</p>
                 </div>
               </section>
             </router-link>
@@ -319,6 +319,24 @@ export default {
           title: 'Review of The Days',
           cta: 'All Video'
         }
+      },
+      books: {
+        firstBook: {
+          name: 'Hooked',
+          author: 'Nir Eyal',
+          number: '120',
+        },
+        secondBook: {
+          name: 'The One Thing',
+          author: 'Gary Keller',
+          number: '90',
+        },
+        thirdBook: {
+          name: 'Originals',
+          author: 'Adam Grant',
+          chapterCurrent: '2',
+          chapterTotal: '9',
+        }
       }
     }
   },
@@ -399,8 +417,6 @@ export default {
         justify-content: space-between;
         width: 100%;
         border-radius: 5px;
-        //background: url('../assets/discover-bg-1.jpg') no-repeat;
-        //background-size: cover;
         color: $color-white;
         padding: 15px 20px;
         position: relative;
